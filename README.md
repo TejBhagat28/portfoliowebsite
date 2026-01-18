@@ -4,7 +4,7 @@ A modern, responsive portfolio website built with **React** and **SCSS**, showca
 
 ## Demo
 
-View a live demo:   
+View a live demo: https://tejbhagat28.github.io/portfoliowebsite/  
 
 ---
 
