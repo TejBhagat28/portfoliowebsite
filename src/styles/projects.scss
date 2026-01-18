@@ -1,0 +1,101 @@
+.projects-section {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 3rem auto 0;
+}
+
+/* Card */
+.project-card {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.04),
+    rgba(0, 0, 0, 0.02)
+  );
+  padding: 1.75rem;
+  border-radius: 20px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3 {
+    color: var(--accent);
+    font-size: 1.3rem;
+  }
+
+  .arrow {
+    font-size: 1.2rem;
+    opacity: 0.6;
+  }
+}
+
+/* Description */
+.card-desc {
+  margin: 1rem 0;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Footer */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Tech pills */
+.tech-tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+
+  span {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+  }
+}
+
+/* CTA */
+.view {
+  font-size: 0.8rem;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+/* Hover */
+.project-card:hover {
+  border-color: var(--accent);
+}
+
+/* Dark mode */
+[data-theme="dark"] .project-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

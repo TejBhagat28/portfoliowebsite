@@ -1,0 +1,126 @@
+// .navbar {
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+//   background: var(--bg);
+//   display: flex;
+//   justify-content: space-between;
+//   padding: 1rem 2rem;
+//   align-items: center;
+//   z-index: 100;
+
+//   ul {
+//     display: flex;
+//     gap: 1.5rem;
+//     list-style: none;
+
+//     a {
+//       text-decoration: none;
+//       color: var(--text);
+//       font-weight: 500;
+
+//       &:hover {
+//         color: var(--accent);
+//       }
+//     }
+//   }
+
+//   button {
+//     background: none;
+//     border: none;
+//     font-size: 1.2rem;
+//     cursor: pointer;
+//   }
+// }
+
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      a {
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 500;
+        position: relative;
+        transition: color 0.3s;
+
+        &:hover {
+          color: var(--accent);
+
+          &::after {
+            width: 100%;
+          }
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          height: 2px;
+          width: 0;
+          background: var(--accent);
+          transition: width 0.3s;
+        }
+      }
+    }
+  }
+
+  button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text);
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: var(--bg);
+      gap: 1rem;
+      padding: 1rem 2rem;
+      display: none;
+
+      &.active {
+        display: flex;
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+.about {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  text-align: center;
+
+  .about-text {
+    max-width: 700px;
+    margin: 1rem auto 3rem;
+    opacity: 0.85;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .about-card {
+      background: rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+      border-radius: 18px;
+      text-align: left;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      h3 {
+        color: var(--accent);
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+      }
+
+      p {
+        font-size: 1rem;
+        opacity: 0.85;
+        line-height: 1.5;
+      }
+
+      .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-top: 1rem;
+
+        button {
+          padding: 0.4rem 0.9rem;
+          border-radius: 999px;
+          border: 1px solid var(--accent);
+          background: transparent;
+          color: var(--accent);
+          font-size: 0.8rem;
+          cursor: default;
+          transition: 0.2s ease;
+
+          &:hover {
+            background: var(--accent);
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  /* Dark Mode */
+  [data-theme="dark"] & .about-card {
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+/* Tablet View */
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-card {
+    padding: 1.8rem;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-card {
+    text-align: center;
+    padding: 1.5rem;
+
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+
+    .btn-group {
+      justify-content: center;
+    }
+  }
+}
